@@ -19,7 +19,7 @@ app.post("/checkout", async (req, res, next) => {
         const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         shipping_address_collection: {
-        allowed_countries: ['UK'],
+        allowed_countries: ['GB'],
         },
             shipping_options: [
             {
@@ -47,7 +47,7 @@ app.post("/checkout", async (req, res, next) => {
                 type: 'fixed_amount',
                 fixed_amount: {
                     amount: 1500,
-                    currency: 'gpd',
+                    currency: 'gbp',
                 },
                 display_name: 'Next day air',
                 delivery_estimate: {
@@ -65,7 +65,7 @@ app.post("/checkout", async (req, res, next) => {
             ],
            line_items:  req.body.items.map((item) => ({
             price_data: {
-              currency: 'gpd',
+              currency: 'gbp',
               product_data: {
                 name: item.name,
                 images: [item.product]
@@ -85,4 +85,4 @@ app.post("/checkout", async (req, res, next) => {
     }
 });
 
-app.listen(4242, () => console.log('app is running on 4000'));
+app.listen(4000, () => console.log('app is running on 4000'));
