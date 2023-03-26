@@ -75,8 +75,8 @@ app.post("/checkout", async (req, res, next) => {
             quantity: item.quantity,
           })),
            mode: "payment",
-           success_url: "https://angular-e-commerce-store.vercel.app/success.html",
-           cancel_url: "https://angular-e-commerce-store.vercel.app/cancel.html",
+           success_url: "https://panicky-mite-coat.cyclic.app/success.html",
+           cancel_url: "https://panicky-mite-coat.cyclic.app/cancel.html",
         });
 
         res.status(200).json(session);
